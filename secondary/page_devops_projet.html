@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet DevOps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-gray-900 text-white font-roboto">
+    <header class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Projet DevOps</h1>
+        </div>
+    </header>
+    <main class="container mx-auto p-8">
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Détails du projet</h2>
+            <p class="mb-4">Contenu à compléter avec les détails spécifiques de votre projet DevOps.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Technologies utilisées</h3>
+                    <ul class="list-disc pl-5">
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>CI/CD Pipelines</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Compétences démontrées</h3>
+                    <ul class="list-disc pl-5">
+                        <li>Automatisation des déploiements</li>
+                        <li>Gestion d'infrastructure as code</li>
+                        <li>Monitoring et logging</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <a href="/index.html" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 inline-block">Retour au portfolio</a>
+    </main>
+</body>
+</html>
+</create_file>
+
+<create_file>
+<path>secondary/page_bdd_projet.html</path>
+<content>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Base de Données</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-gray-900 text-white font-roboto">
+    <header class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Projet Base de Données</h1>
+        </div>
+    </header>
+    <main class="container mx-auto p-8">
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Détails du projet</h2>
+            <p class="mb-4">Contenu à compléter avec les détails spécifiques de votre projet de base de données.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Technologies utilisées</h3>
+                    <ul class="list-disc pl-5">
+                        <li>MySQL/PostgreSQL</li>
+                        <li>Modélisation de données</li>
+                        <li>Optimisation de requêtes</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Compétences démontrées</h3>
+                    <ul class="list-disc pl-5">
+                        <li>Conception de schémas relationnels</li>
+                        <li>Gestion des transactions</li>
+                        <li>Sécurité des données</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <a href="/index.html" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 inline-block">Retour au portfolio</a>
+    </main>
+</body>
+</html>
+</create_file>
+
+Maintenant que toutes les pages sont créées, je vais finaliser la mise à jour des liens dans index.html :
+
+<edit_file>
+<path>index.html</path>
+<content>
+<<<<<<< SEARCH
+      <a href="/secondary/page_dev_formation.html" class="bg-blue-600 text-white p-2 rounded-lg transition hover:bg-blue-700 inline-block text-center">Choisir</a>
+      <h4 class="text-2xl font-bold mb-2">DevOps</h4>
+=======
+      <a href="/secondary/page_devops_projet.html" class="bg-blue-600 text-white p-2 rounded-lg transition hover:bg-blue-700 inline-block text-center">Choisir</a>
+      <h4 class="text-2xl font-bold mb-2">DevOps</h4>
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+      <a href="/secondary/page_dev_formation.html" class="bg-blue-600 text-white p-2 rounded-lg transition hover:bg-blue-700 inline-block text-center">Choisir</a>
+      <h4 class="text-2xl font-bold mb-2">Base de données</h4>
+=======
+      <a href="/secondary/page_bdd_projet.html" class="bg-blue-600 text-white p-2 rounded-lg transition hover:bg-blue-700 inline-block text-center">Choisir</a>
+      <h4 class="text-2xl font-bold mb-2">Base de données</h4>
