@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="css/typewriter.css"/>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -30,27 +31,7 @@ body.fade-in {
   opacity: 1;
   transition: opacity 0.5s;
 }
-.shine-title {
-  position: relative;
-  overflow: hidden;
-}
-.shine-title::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -75%;
-  width: 50%; height: 100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
-  transform: skewX(-20deg);
-  pointer-events: none;
-}
-.shine-title.shine-active::after {
-  animation: shine-move 2.5s linear 1;
-}
-@keyframes shine-move {
-  0% { left: -75%; }
-  60% { left: 120%; }
-  100% { left: 120%; }
-}
+
 
 /* Style titre comme index.html */
 .title-3d {
@@ -183,7 +164,7 @@ window.addEventListener('DOMContentLoaded', function() {
         <li class="nav-item"> <a class="nav-link" href="index.html">Acceuil</a> </li>
         <li class="nav-item active"> <a class="nav-link" href="apropos.html">A propos</a> </li>
         <li class="nav-item"> <a class="nav-link" href="projet.html">Projet</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="projets-e5.html">Projets E5</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="projets-e5.html">Épreuve E5</a> </li>
         <li class="nav-item"> <a class="nav-link" href="veille.html">Veille</a> </li>
         <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a> </li>
       </ul>
@@ -200,8 +181,8 @@ window.addEventListener('DOMContentLoaded', function() {
       <div class="row">
         <div class="col-md-12 text-center">
           <div class="banner-text" style="padding: 100px 0;">
-            <h2 class="white wow animate__animated animate__slideInUp" id="apropos-title" data-wow-delay="0.1s" style="font-size: 4em; margin-bottom: 30px; animation-duration: 1.2s;">À PROPOS DE MOI</h2>
-            <h3 id="apropos-subtitle" class="wow animate__animated animate__slideInUp" data-wow-delay="0.2s" style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 900; font-size: 2.5em; color: #fff; margin-top: 18px; margin-bottom: 0; letter-spacing: 0.07em;">ALI-CHERIF ILIES</h3>
+            <h2 class="white" style="font-size: 4em; margin-bottom: 30px;"><span class="typewriter">A PROPOS</span></h2>
+            <h3 id="apropos-subtitle" style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 900; font-size: 2.5em; color: #fff; margin-top: 18px; margin-bottom: 0; letter-spacing: 0.07em;"><span class="typewriter-subtitle">ALI-CHERIF ILIES</span></h3>
           </div>
         </div>
       </div>

@@ -1,0 +1,19 @@
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typewriter, .typewriter-subtitle {
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  width: 0;
+}
+
+.typewriter {
+  animation: typewriter 2s steps(20) 1s forwards;
+}
+
+.typewriter-subtitle {
+  animation: typewriter 2s steps(30) 3s forwards;
+}

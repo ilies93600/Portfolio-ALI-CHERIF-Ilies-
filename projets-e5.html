@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Projets E5 - Portfolio</title>
+<title>Épreuve E5 - Portfolio</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -32,24 +32,29 @@ body.fade-in {
 .shine-title {
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
-.shine-title::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -75%;
-  width: 50%; height: 100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
-  transform: skewX(-20deg);
-  pointer-events: none;
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
 }
-.shine-title.shine-active::after {
-  animation: shine-move 2.5s linear 1;
+
+.typewriter, .typewriter-subtitle {
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  width: 0;
 }
-@keyframes shine-move {
-  0% { left: -75%; }
-  60% { left: 120%; }
-  100% { left: 120%; }
+
+.typewriter {
+  animation: typewriter 2s steps(20) 1s forwards;
 }
+
+.typewriter-subtitle {
+  animation: typewriter 2s steps(30) 3s forwards;
+}
+
 
 </style>
 <script>
@@ -86,7 +91,7 @@ window.addEventListener('DOMContentLoaded', function() {
         <li class="nav-item"> <a class="nav-link" href="index.html">Acceuil</a> </li>
         <li class="nav-item"> <a class="nav-link" href="apropos.html">A propos</a> </li>
         <li class="nav-item"> <a class="nav-link" href="projet.html">Projet</a> </li>
-        <li class="nav-item active"> <a class="nav-link" href="projets-e5.html">Projets E5</a> </li>
+        <li class="nav-item active"> <a class="nav-link" href="projets-e5.html">Épreuve E5</a> </li>
         <li class="nav-item"> <a class="nav-link" href="veille.html">Veille</a> </li>
         <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a> </li>
       </ul>
@@ -101,8 +106,8 @@ window.addEventListener('DOMContentLoaded', function() {
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="banner-text" style="padding: 100px 0;">
-          <h2 class="white shine-title" style="font-size: 4em; margin-bottom: 30px;">PROJETS E5</h2>
-          <h3 class="white" style="font-size: 2em;">Épreuve E5 - BTS SIO</h3>
+          <h2 class="white" style="font-size: 4em; margin-bottom: 30px;"><span class="typewriter">ÉPREUVE E5</span></h2>
+          <h3 class="white" style="font-size: 2em;"><span class="typewriter-subtitle">Épreuve E5 - BTS SIO</span></h3>
         </div>
       </div>
     </div>
@@ -117,8 +122,26 @@ window.addEventListener('DOMContentLoaded', function() {
     <div class="row">
       <div class="col-md-12">
         <div class="sectioner-header text-center">
-          <h3>Projets de l'Épreuve E5</h3>
+          <h3>Épreuve E5 - BTS SIO</h3>
           <span class="line"></span>
+          <p class="mt-4" style="text-align: justify; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            Catalina Marketing est une entreprise spécialisée dans le marketing personnalisé, fondée aux États-Unis en 1983. Elle se distingue par sa capacité à analyser les données d'achat des consommateurs pour proposer des offres ciblées et des coupons personnalisés, principalement dans les secteurs de la grande distribution. Grâce à des partenariats avec des détaillants, Catalina distribue ces offres directement aux consommateurs au moment de l'achat, que ce soit en magasin ou en ligne.
+            <br><br>
+            En France, Catalina Marketing opère avec un modèle similaire, collaborant avec des enseignes de la grande distribution pour offrir des promotions personnalisées aux clients. L'entreprise met l'accent sur l'analyse des comportements d'achat pour optimiser l'efficacité des campagnes marketing et renforcer la fidélisation des clients.
+          </p>
+          <div style="margin-bottom: 80px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center">
+          <h3>MON EXPÉRIENCE CHEZ CATALINA</h3>
+          <span class="line"></span>
+          <p class="mt-4" style="text-align: justify; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            Mon expérience chez Catalina Marketing, en tant que hotliner, m'a permis de développer mes compétences en relation client, en gestion des incidents techniques, et en communication professionnelle. J'assurais l'assistance aux utilisateurs, la résolution de tickets, et le suivi des demandes. Sous la supervision de mon tuteur, Amar Elkarim Kedia, j'ai également appris à travailler efficacement en équipe dans un environnement exigeant et structuré.
+          </p>
+          <div style="margin-bottom: 80px;"></div>
         </div>
       </div>
     </div>
@@ -128,17 +151,23 @@ window.addEventListener('DOMContentLoaded', function() {
           <div class="project-icon">
             <i class="fa fa-tasks" aria-hidden="true"></i>
           </div>
-          <h5>Situation 1</h5>
-          <p>Description détaillée de la première situation professionnelle...</p>
+          <h5>Projets réalisés en formation</h5>
+          <p style="text-align: justify; line-height: 1.6;">
+Projets réalisés durant ma formation au BTS SIO SISR :
+</p>
+<ul class="list-unstyled" style="text-align: left; line-height: 1.6; margin: 20px 0;">
+  <li><i class="fa fa-check"></i> <a href="pdf/mise en place de la solution GLPI.pdf" target="_blank" style="color: #007bff;"><span style="background: transparent; transition: all 0.3s; text-decoration: none;" onmouseover="this.style.background='#007bff20'; this.style.textDecoration='underline'" onmouseout="this.style.background='transparent'; this.style.textDecoration='none'">Installation et configuration de GLPI</span></a></li>
+  <li><i class="fa fa-check"></i> Configuration avec Windows Server</li>
+  <li><i class="fa fa-check"></i> Installation de VM avec VirtualBox</li>
+</ul>
           <div class="mt-4">
             <h6>Compétences mobilisées :</h6>
             <ul class="list-unstyled">
-              <li><i class="fa fa-check"></i> Compétence 1</li>
-              <li><i class="fa fa-check"></i> Compétence 2</li>
-              <li><i class="fa fa-check"></i> Compétence 3</li>
+              <li><i class="fa fa-check"></i> Gestion de parc informatique</li>
+              <li><i class="fa fa-check"></i> Administration Windows Server</li>
+              <li><i class="fa fa-check"></i> Virtualisation</li>
             </ul>
           </div>
-          <a href="#" class="btn btn-primary mt-3">Voir le détail</a>
         </div>
       </div>
       <div class="col-md-6">
@@ -146,17 +175,25 @@ window.addEventListener('DOMContentLoaded', function() {
           <div class="project-icon">
             <i class="fa fa-project-diagram" aria-hidden="true"></i>
           </div>
-          <h5>Situation 2</h5>
-          <p>Description détaillée de la deuxième situation professionnelle...</p>
+          <h5>Missions et Responsabilités</h5>
+          <p style="text-align: justify; line-height: 1.6;">
+En tant que hotliner chez Catalina Marketing, mes principales missions sont :
+</p>
+<ul class="list-unstyled" style="text-align: left; line-height: 1.6; margin: 20px 0;">
+  <li><i class="fa fa-check"></i> Assurer le support technique de niveau 1 auprès des utilisateurs</li>
+  <li><i class="fa fa-check"></i> <a href="pdf/process-gerer-et-suivre-incidents-remedy.pdf" target="_blank" style="color: #007bff;"><span style="background: transparent; transition: all 0.3s; text-decoration: none;" onmouseover="this.style.background='#007bff20'; this.style.textDecoration='underline'" onmouseout="this.style.background='transparent'; this.style.textDecoration='none'">Gérer et suivre les tickets d'incidents via Remedy</span></a></li>
+  <li><i class="fa fa-check"></i> <a href="pdf/Remplacement de serveur procedure.pdf" target="_blank" style="color: #007bff;"><span style="background: transparent; transition: all 0.3s; text-decoration: none;" onmouseover="this.style.background='#007bff20'; this.style.textDecoration='underline'" onmouseout="this.style.background='transparent'; this.style.textDecoration='none'">Diagnostiquer et résoudre les problèmes techniques</span></a></li>
+  <li><i class="fa fa-check"></i> Documenter les solutions dans la base de connaissances</li>
+</ul>
           <div class="mt-4">
             <h6>Compétences mobilisées :</h6>
             <ul class="list-unstyled">
-              <li><i class="fa fa-check"></i> Compétence 1</li>
-              <li><i class="fa fa-check"></i> Compétence 2</li>
-              <li><i class="fa fa-check"></i> Compétence 3</li>
+              <li><i class="fa fa-check"></i> Support technique et résolution de problèmes</li>
+              <li><i class="fa fa-check"></i> Communication professionnelle</li>
+              <li><i class="fa fa-check"></i> Gestion des incidents (Remedy)</li>
+              <li><i class="fa fa-check"></i> Documentation technique</li>
             </ul>
           </div>
-          <a href="#" class="btn btn-primary mt-3">Voir le détail</a>
         </div>
       </div>
     </div>
@@ -165,11 +202,11 @@ window.addEventListener('DOMContentLoaded', function() {
 <!-- Content End -->
 
 <div class="container-fluid" style="text-align:center; padding:20px 0; margin-top:40px;">
-  <a href="images/Tableau de synthese Ali-Cherif Ilies - Epreuve E4 - BTS SIO 2025 (1).pdf" target="_blank" style="color:#888; font-family:'Montserrat',Arial,sans-serif; font-size:1em; text-decoration:none; display:inline-block; margin-bottom:6px; border:1.5px solid #bbb; border-radius:8px; padding:8px 20px; transition:box-shadow 0.2s, border-color 0.2s; box-shadow:0 1px 4px rgba(0,0,0,0.03); background:#fafafd; cursor:pointer;" onmouseover="this.style.borderColor='#8e1efc';this.style.boxShadow='0 2px 12px rgba(142,30,252,0.10)';" onmouseout="this.style.borderColor='#bbb';this.style.boxShadow='0 1px 4px rgba(0,0,0,0.03)';">Tableau de synthèse Ali-Cherif Ilies - Epreuve E4 - BTS SIO 2025 (PDF)</a>
+  <a href="images/Tableau de synthese Ali-Cherif Ilies - Epreuve E4 - BTS SIO 2025 (1).pdf" target="_blank" style="color:#888; font-family:'Montserrat',Arial,sans-serif; font-size:1em; text-decoration:none; display:inline-block; margin-bottom:6px; border:1.5px solid #bbb; border-radius:8px; padding:8px 20px; transition:all 0.3s; box-shadow:0 1px 4px rgba(0,0,0,0.03); background:#fafafd; cursor:pointer;" onmouseover="this.style.borderColor='#007bff';this.style.boxShadow='0 2px 12px rgba(0,123,255,0.2)';this.style.background='#007bff20';this.style.color='#007bff';" onmouseout="this.style.borderColor='#bbb';this.style.boxShadow='0 1px 4px rgba(0,0,0,0.03)';this.style.background='#fafafd';this.style.color='#888';">Tableau de synthese Ali-Cherif Ilies - BTS SIO 2025</a>
 </div>
 
-<div class="container-fluid" style="text-align:center; margin-top:20px;">
-  <p>&copy; 2024 Portfolio ALI-CHERIF Ilies</p>
+<div style="text-align:center; padding:20px 0;">
+  <p style="margin:0;">&copy; 2025 Portfolio ALI-CHERIF Ilies</p>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
@@ -197,12 +234,6 @@ function createRipple(e) {
 }
 </script>
 
-      <div class="col-md-12">
-        <p>&copy; 2024 Portfolio ALI-CHERIF Ilies</p>
-      </div>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>
