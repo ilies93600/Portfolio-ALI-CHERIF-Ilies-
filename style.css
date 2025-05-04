@@ -38,24 +38,67 @@ h6 {
 	line-height: 50px;
 	background: transparent;
 	z-index: 1030;
+	transition: background-color 0.3s ease;
 }
 .navbar .active {
 	color: #5f0099 !important;
 }
 .navbar .navbar-brand {
+    padding: 0;
+}
+
+.logo-1 {
+    height: 60px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.logo-1:hover {
+    transform: scale(1.05);
+    opacity: 1;
 }
 .navbar .nav-item {
 	margin: 0 5px;
 	padding: 0;
 }
 .navbar .nav-item a {
-	color: #fff;
-	text-transform: uppercase;
+	color: #ffffff;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	font-size: 15px;
+	text-transform: capitalize;
+	font-family: 'Poppins', sans-serif;
+	transition: all 0.3s ease;
+}
+
+.nav-scroll .nav-item a {
+	color: #8e1efc;
+}
+
+.navbar .nav-item a[href="veille.html"] {
+	position: relative;
+	transition: all 0.3s ease;
+}
+
+.nav-scroll .nav-item a[href="veille.html"] {
+	color: #8e1efc !important;
 	font-weight: 600;
-	font-size: 13px;
+	text-shadow: 0 0 1px rgba(142, 30, 252, 0.2);
+}
+
+/* Style pour le lien Veille quand la navbar est scrollée */
+.navbar.nav-scroll .nav-item a {
+	color: #8e1efc !important;
+}
+
+.navbar.bg-white .nav-item a {
+	color: #8e1efc;
 }
 .navbar .nav-item a:hover {
-	color: #5f0099;
+	color: #cd9ffa !important;
+	text-decoration: none;
 }
 .navbar .nav-link {
 	position: relative;
@@ -71,14 +114,39 @@ h6 {
 	display: none;
 }
 .nav-scroll {
+	padding-top: 0px;
+	padding-bottom: 0px;
 	background: #fff;
-	-webkit-box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.0509803922);
-	box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.0509803922);
-	-webkit-transition: all .4s ease;
+	-webkit-box-shadow: 0px 1px 40px rgba(0,0,0,0.05);
+	-moz-box-shadow: 0px 1px 40px rgba(0,0,0,0.05);
+	box-shadow: 0px 1px 40px rgba(0,0,0,0.05);
 	transition: all .4s ease;
 }
+/* Styles for navbar links */
+.navbar .nav-item a {
+	color: #ffffff;
+}
+
+/* Styles for navbar links when scrolled */
+.nav-scroll .nav-item a,
+.navbar.bg-white .nav-item a {
+	color: #8e1efc !important;
+}
+
+/* Specific style for Veille link */
+.nav-item a[href="veille.html"] {
+	position: relative;
+	font-weight: 600;
+}
+
+/* Style for Veille link when navbar is scrolled */
+.nav-scroll .nav-item a[href="veille.html"],
+.navbar.bg-white .nav-item a[href="veille.html"] {
+	color: #8e1efc !important;
+	text-shadow: 0 0 1px rgba(142, 30, 252, 0.2);
+}
 .nav-scroll .navbar-nav > li > a {
-	color: #333;
+	color: #8e1efc !important;
 }
 .nav-scroll .navbar-brand img {
 	-webkit-transform: scale(1.03) !important;
