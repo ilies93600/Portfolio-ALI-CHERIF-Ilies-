@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>A propos - Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { zoom: 1.1; }
+
+.navbar-nav .nav-link {
+  transition: opacity 1.2s, transform 1.2s cubic-bezier(.77,0,.18,1);
+}
+.navbar-nav .nav-link:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #1e2a3a;
+}
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+body.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.shine-title {
+  position: relative;
+  overflow: hidden;
+}
+.shine-title::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+.shine-title.shine-active::after {
+  animation: shine-move 2.5s linear 1;
+}
+@keyframes shine-move {
+  0% { left: -75%; }
+  60% { left: 120%; }
+  100% { left: 120%; }
+}
+
+/* Style titre comme index.html */
+.title-3d {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 4em;
+  background: linear-gradient(100deg, #fff 60%, #f5faff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #fff;
+  text-shadow:
+    0 2px 0 #b7b7b7,
+    0 4px 0 #a0a0a0,
+    0 8px 8px #6d4aff,
+    0 12px 16px #00f0ff,
+    0 18px 32px #7f4fff,
+    0 24px 64px #ff3cac,
+    0 0 18px #fff;
+  filter: drop-shadow(0 0 12px #fff8) drop-shadow(0 2px 16px #7f4fff88);
+  transform: perspective(600px) rotateX(12deg) scale(1.07);
+  transition: text-shadow 0.3s, color 0.3s, filter 0.3s;
+}
+/* Style sous-titre comme index.html */
+.subtitle-3d {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 2em;
+  background: linear-gradient(90deg, #fff 80%, #f5faff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #fff;
+  text-shadow:
+    0 1px 0 #b7b7b7,
+    0 2px 0 #a0a0a0,
+    0 4px 8px #6d4aff,
+    0 6px 12px #00f0ff,
+    0 10px 24px #7f4fff,
+    0 0 8px #fff;
+  filter: drop-shadow(0 0 6px #fff6) drop-shadow(0 1px 8px #7f4fff66);
+  transform: perspective(600px) rotateX(8deg) scale(1.03);
+  transition: text-shadow 0.3s, color 0.3s, filter 0.3s;
+}
+.qualites-align { display: flex !important; align-items: flex-start !important; justify-content: center; }
+.qualite-col { display: flex; flex-direction: column; align-items: center; min-width: 220px; min-height: 270px; }
+.qualite-col > div[style*='margin-bottom:18px'] { min-height: 90px !important; display: flex !important; align-items: flex-end !important; justify-content: center !important; width: 100%; }
+.qualite-col img { height: 80px !important; width: auto !important; display: inline-block; }
+.qualite-titre { font-family: 'Montserrat', Arial, sans-serif; font-size:2em; letter-spacing:0.09em; text-transform:uppercase; margin-bottom:12px; color:#111; min-height: 1.8em; display: flex; align-items: flex-end; justify-content: center; font-weight: bold; }
+</style>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var titre = document.querySelector('.shine-title');
+  if (window.sessionStorage.getItem('shineOnLoad')) {
+    if (titre) {
+      titre.classList.add('shine-active');
+      setTimeout(function() {
+        titre.classList.remove('shine-active');
+      }, 2600);
+    }
+    window.sessionStorage.removeItem('shineOnLoad');
+  }
+  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (link.hostname === window.location.hostname && link.getAttribute('href') !== '#') {
+        window.sessionStorage.setItem('shineOnLoad', '1');
+      }
+    });
+  });
+});
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var titre = document.querySelector('.shine-title');
+  if (window.sessionStorage.getItem('shineOnLoad')) {
+    if (titre) {
+      titre.classList.add('shine-active');
+      setTimeout(function() {
+        titre.classList.remove('shine-active');
+      }, 2600);
+    }
+    window.sessionStorage.removeItem('shineOnLoad');
+  }
+  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (link.hostname === window.location.hostname && link.getAttribute('href') !== '#') {
+        window.sessionStorage.setItem('shineOnLoad', '1');
+      }
+    });
+  });
+});
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var titre = document.querySelector('.shine-title');
+  if (window.sessionStorage.getItem('shineOnLoad')) {
+    if (titre) {
+      titre.classList.add('shine-active');
+      setTimeout(function() {
+        titre.classList.remove('shine-active');
+      }, 2600);
+    }
+    window.sessionStorage.removeItem('shineOnLoad');
+  }
+  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (link.hostname === window.location.hostname && link.getAttribute('href') !== '#') {
+        window.sessionStorage.setItem('shineOnLoad', '1');
+      }
+    });
+  });
+});
+</script>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container"> <a class="navbar-brand navbar-logo" href="index.html"> <img src="images/logo.png" alt="logo" class="logo-1"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"> <a class="nav-link" href="index.html">Acceuil</a> </li>
+        <li class="nav-item active"> <a class="nav-link" href="apropos.html">A propos</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="projet.html">Projet</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="projets-e5.html">Projets E5</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="veille.html">Veille</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a> </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+
+<!-- Banner Start -->
+<section class="banner wow animate__animated animate__slideInUp" data-scroll-index='0'>
+  <div class="banner-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="banner-text" style="padding: 100px 0;">
+            <h2 class="white wow animate__animated animate__slideInUp" id="apropos-title" data-wow-delay="0.1s" style="font-size: 4em; margin-bottom: 30px; animation-duration: 1.2s;">À PROPOS DE MOI</h2>
+            <h3 id="apropos-subtitle" class="wow animate__animated animate__slideInUp" data-wow-delay="0.2s" style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 900; font-size: 2.5em; color: #fff; margin-top: 18px; margin-bottom: 0; letter-spacing: 0.07em;">ALI-CHERIF ILIES</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="svg-wave"> <img class="svg-hero" src="images/portfolio-wave.svg"> </span>
+</section>
+<!-- Banner End -->
+
+<!-- Content Start -->
+<section class="section-padding prelative wow animate__animated animate__slideInUp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row align-items-center wow animate__animated animate__slideInUp" data-wow-delay="0.2s" style="margin-bottom:40px; animation-duration: 1.2s;">
+  <div class="col-md-4 text-center d-flex align-items-center justify-content-center wow animate__animated animate__slideInLeft" data-wow-delay="0.3s" style="animation-duration: 1.2s;">
+  <span>
+  <img src="images/crayon-user.png" alt="Crayon cartoon" class="img-fluid" style="max-width: 160px;">
+</span>
+</div>
+  <div class="col-md-8 wow animate__animated animate__slideInRight" data-wow-delay="0.4s" style="animation-duration: 1.2s;">
+    <div class="about-text" style="font-size:1.25em; line-height:1.7;">
+      <p style="font-weight: bold;">
+        Curieux de nature, j’ai toujours soif de découverte, que ce soit dans le sport, le numérique ou la technologie. J’adore comprendre comment les choses fonctionnent, tester, apprendre et repousser mes limites.<br><br>
+        À 20 ans, je ne me contente pas d’observer&nbsp;: j’expérimente, j’explore et je transforme chaque nouvelle connaissance en opportunité d’évolution.<br><br>
+        Mon énergie et ma passion me poussent à aller plus loin, à sortir de ma zone de confort et à m’investir pleinement dans tout ce que j’entreprends. Pour moi, chaque défi est une chance d’apprendre, de grandir et de m’épanouir.
+      </p>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 160px;"></div>
+<div class="sectioner-header text-center wow animate__animated animate__slideInUp" data-wow-delay="0.5s" style="animation-duration: 1.2s;">
+  <h3 style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 900; font-size: 2.5em; color: #111; margin-bottom: 0.2em;">
+    Mes Qualités
+  </h3>
+  <span class="line" style="display: block; margin: 0.2em auto 0 auto;"></span>
+</div>
+<div class="row text-center qualites-align wow animate__animated animate__slideInUp" data-wow-delay="0.6s" style="margin: 50px 0 30px 0; color: #fff; animation-duration: 1.6s;">
+  <div class="col-md-4 mb-4 qualite-col wow animate__animated animate__slideInLeft" data-wow-delay="0.7s" style="animation-duration: 1.2s;">
+    <div style="margin-bottom:18px; min-height:90px; display:flex; align-items:flex-end; justify-content:center;">
+      <img src="images/horloge.png" alt="Horloge" style="height:80px; width:auto; display:inline-block;">
+    </div>
+    <h4 class="font-weight-bold qualite-titre">RIGOUREUX</h4>
+    <div style="font-family: 'Montserrat', Arial, sans-serif; font-size:1.15em; color:#111;">Gagner du temps, être plus efficace et performant</div>
+  </div>
+  <div class="col-md-4 mb-4 qualite-col wow animate__animated animate__slideInUp" data-wow-delay="0.8s" style="animation-duration: 1.2s;">
+    <div style="margin-bottom:18px; min-height:90px; display:flex; align-items:flex-end; justify-content:center;">
+      <img src="images/perseverance.png" alt="Persévérance" style="height:80px; width:auto; display:inline-block;">
+    </div>
+    <h4 class="font-weight-bold qualite-titre">PERSEVERANT</h4>
+    <div style="font-family: 'Montserrat', Arial, sans-serif; font-size:1.15em; color:#111; margin-bottom:46px;">S'obstiner pour être récompensé par la satisfaction d'avoir réussi</div>
+  </div>
+  <div class="col-md-4 mb-4 qualite-col wow animate__animated animate__slideInRight" data-wow-delay="0.9s" style="animation-duration: 1.2s;">
+    <div style="margin-bottom:18px; min-height:90px; display:flex; align-items:flex-end; justify-content:center;">
+      <img src="images/autonome.png.png" alt="Autonome" style="height:80px; width:auto; display:inline-block;">
+    </div>
+    <h4 class="font-weight-bold qualite-titre">AUTONOME</h4>
+    <div style="font-family: 'Montserrat', Arial, sans-serif; font-size:1.15em; color:#111;">Mettre des solutions en place sans avoir besoin d'être assisté</div>
+  </div>
+</div>
+<div style="margin-top: 80px;"></div>
+<div style="margin-top: 80px;"></div>
+<div class="sectioner-header text-center wow animate__animated animate__slideInUp" style="margin-top: 120px; animation-duration: 1.2s;" data-wow-delay="1.0s">
+    <span style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 900; font-size: 2.5em; color: #111; letter-spacing: 0.09em; display: block;">Compétences</span>
+    <span class="line" style="display: block; margin: 0.2em auto 0 auto;"></span>
+  </div>
+<table style="width:94%; max-width:1200px; margin-top:70px; margin-left:auto; margin-right:auto; padding-left:30px; padding-right:30px; border-collapse:separate; border-spacing:0; font-family:'Montserrat', Arial, sans-serif; background:#fff; border-radius:18px; box-shadow:0 2px 12px rgba(142,30,252,0.07); overflow:hidden;">
+      <tr>
+        <td class="wow animate__animated animate__slideInLeft" data-wow-delay="1.1s" style="vertical-align:top; padding:28px 22px 22px 22px; border-right:2.5px solid #e6d6fa; min-width:280px; color:#111; animation-duration: 1.2s;">
+          <span style="font-family:'Montserrat', Arial, sans-serif; font-weight:700; font-size:1.25em; color:#8e1efc; text-shadow:0 1px 6px rgba(142,30,252,0.09); letter-spacing:0.02em;">1. Compétences techniques :</span><br><br>
+          <span style="font-weight:600; color:#111;">Support utilisateur / assistance technique (hotline)&nbsp;:</span><br>
+          Durant mon alternance chez Catalina, j’ai acquis une solide expérience en support informatique de niveau 1. J’ai su diagnostiquer les problèmes techniques (logiciels, matériels, réseau), assister les utilisateurs à distance, et assurer le suivi des incidents via un outil de ticketing.<br><br>
+          <span style="font-weight:600; color:#111;">Notions en réseaux et systèmes&nbsp;:</span><br>
+          Grâce à la formation BTS SIO option SISR, j’ai développé des compétences en gestion des réseaux, administration des systèmes (Windows Server, Linux).<br><br>
+          <span style="font-weight:600; color:#111;">Utilisation d’outils professionnels&nbsp;:</span><br>
+          Maîtrise des outils de gestion de tickets, des systèmes de supervision, des solutions de prise en main à distance, et des bases de données dans un cadre professionnel.
+        </td>
+        <td class="wow animate__animated animate__slideInUp" data-wow-delay="1.2s" style="vertical-align:top; padding:28px 22px 22px 22px; border-right:2.5px solid #e6d6fa; min-width:280px; color:#111; animation-duration: 1.2s;">
+          <span style="font-family:'Montserrat', Arial, sans-serif; font-weight:700; font-size:1.25em; color:#8e1efc; text-shadow:0 1px 6px rgba(142,30,252,0.09); letter-spacing:0.02em;">2. Compétences en communication et relation client :</span><br><br>
+          <span style="font-weight:600; color:#111;">Écoute active et reformulation&nbsp;:</span> Indispensables pour comprendre rapidement les demandes des utilisateurs et les rassurer.<br><br>
+          <span style="font-weight:600; color:#111;">Pédagogie&nbsp;:</span> Capacité à expliquer des solutions techniques à des personnes non expertes, dans un langage accessible.<br><br>
+          <span style="font-weight:600; color:#111;">Travail en équipe&nbsp;:</span> Collaboration efficace avec les équipes techniques, les administrateurs systèmes.
+        </td>
+        <td class="wow animate__animated animate__slideInRight" data-wow-delay="1.3s" style="vertical-align:top; padding:28px 22px 22px 22px; min-width:280px; color:#111; animation-duration: 1.2s;">
+          <span style="font-family:'Montserrat', Arial, sans-serif; font-weight:700; font-size:1.25em; color:#8e1efc; text-shadow:0 1px 6px rgba(142,30,252,0.09); letter-spacing:0.02em;">3. Méthodologie et rigueur professionnelle :</span><br><br>
+          <span style="font-weight:600; color:#111;">Gestion des priorités&nbsp;:</span> Savoir évaluer l’urgence d’un incident et agir en conséquence pour minimiser l’impact sur l’activité.<br><br>
+          <span style="font-weight:600; color:#111;">Documentation et reporting&nbsp;:</span> Rédaction de procédures, suivi des interventions, mise à jour des bases de connaissances internes.
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Content End -->
+<!-- End A propos Content -->
+
+
+<footer class="footer-copy">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="images/CV%20ALI-CHERIF%20Ilies%202025.pdf" target="_blank" style="color:#888; font-family:'Montserrat',Arial,sans-serif; font-size:1em; text-decoration:none; display:inline-block; margin-bottom:6px; border:1.5px solid #bbb; border-radius:8px; padding:8px 20px; transition:box-shadow 0.2s, border-color 0.2s; box-shadow:0 1px 4px rgba(0,0,0,0.03); background:#fafafd; cursor:pointer;" onmouseover="this.style.borderColor='#8e1efc';this.style.boxShadow='0 2px 12px rgba(142,30,252,0.10)';" onmouseout="this.style.borderColor='#bbb';this.style.boxShadow='0 1px 4px rgba(0,0,0,0.03)';">CV ALI-CHERIF Ilies 2025 (PDF)</a>
+        <p>&copy; 2025 Portfolio 2025 ALI-CHERIF Ilies</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> 
+<script src="js/wow.min.js"></script>
+<script>
+wow = new WOW();
+wow.init();
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var titre = document.getElementById('apropos-title');
+  var sousTitre = document.getElementById('apropos-subtitle');
+  if (titre) {
+    titre.classList.remove('animate__fadeInDown');
+    void titre.offsetWidth;
+    titre.classList.add('animate__fadeInDown');
+  }
+  if (sousTitre) {
+    sousTitre.classList.remove('animate__fadeInDown');
+    void sousTitre.offsetWidth;
+    sousTitre.classList.add('animate__fadeInDown');
+  }
+  var links = document.querySelectorAll('.navbar-nav .nav-link');
+  links.forEach(function(link) {
+    link.addEventListener('mousedown', createRipple);
+  });
+});
+function createRipple(e) {
+  // Effet ripple sur les onglets
+}
+</script>
+</body>
+</html>

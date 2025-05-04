@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Projets E5 - Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { zoom: 1.1; }
+
+.navbar-nav .nav-link {
+  transition: opacity 1.2s, transform 1.2s cubic-bezier(.77,0,.18,1);
+}
+.navbar-nav .nav-link:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #1e2a3a;
+}
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+body.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.shine-title {
+  position: relative;
+  overflow: hidden;
+}
+.shine-title::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+.shine-title.shine-active::after {
+  animation: shine-move 2.5s linear 1;
+}
+@keyframes shine-move {
+  0% { left: -75%; }
+  60% { left: 120%; }
+  100% { left: 120%; }
+}
+
+</style>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var titre = document.querySelector('.shine-title');
+  if (window.sessionStorage.getItem('shineOnLoad')) {
+    if (titre) {
+      titre.classList.add('shine-active');
+      setTimeout(function() {
+        titre.classList.remove('shine-active');
+      }, 2600);
+    }
+    window.sessionStorage.removeItem('shineOnLoad');
+  }
+  var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (link.hostname === window.location.hostname && link.getAttribute('href') !== '#') {
+        window.sessionStorage.setItem('shineOnLoad', '1');
+      }
+    });
+  });
+});
+</script>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container"> <a class="navbar-brand navbar-logo" href="index.html"> <img src="images/logo.png" alt="logo" class="logo-1"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"> <a class="nav-link" href="index.html">Acceuil</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="apropos.html">A propos</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="projet.html">Projet</a> </li>
+        <li class="nav-item active"> <a class="nav-link" href="projets-e5.html">Projets E5</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="veille.html">Veille</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a> </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+<!-- Banner Start -->
+<section class="banner" data-scroll-index='0'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="banner-text" style="padding: 100px 0;">
+          <h2 class="white shine-title" style="font-size: 4em; margin-bottom: 30px;">PROJETS E5</h2>
+          <h3 class="white" style="font-size: 2em;">Épreuve E5 - BTS SIO</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="svg-wave"> <img class="svg-hero" src="images/portfolio-wave.svg"> </span>
+</section>
+<!-- Banner End -->
+
+<!-- Content Start -->
+<section class="section-padding prelative wow animate__animated animate__slideInUp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectioner-header text-center">
+          <h3>Projets de l'Épreuve E5</h3>
+          <span class="line"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="project-box wow fadeInUp" data-wow-delay="0.2s">
+          <div class="project-icon">
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+          </div>
+          <h5>Situation 1</h5>
+          <p>Description détaillée de la première situation professionnelle...</p>
+          <div class="mt-4">
+            <h6>Compétences mobilisées :</h6>
+            <ul class="list-unstyled">
+              <li><i class="fa fa-check"></i> Compétence 1</li>
+              <li><i class="fa fa-check"></i> Compétence 2</li>
+              <li><i class="fa fa-check"></i> Compétence 3</li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-primary mt-3">Voir le détail</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-box wow fadeInUp" data-wow-delay="0.4s">
+          <div class="project-icon">
+            <i class="fa fa-project-diagram" aria-hidden="true"></i>
+          </div>
+          <h5>Situation 2</h5>
+          <p>Description détaillée de la deuxième situation professionnelle...</p>
+          <div class="mt-4">
+            <h6>Compétences mobilisées :</h6>
+            <ul class="list-unstyled">
+              <li><i class="fa fa-check"></i> Compétence 1</li>
+              <li><i class="fa fa-check"></i> Compétence 2</li>
+              <li><i class="fa fa-check"></i> Compétence 3</li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-primary mt-3">Voir le détail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Content End -->
+
+<div class="container-fluid" style="text-align:center; padding:20px 0; margin-top:40px;">
+  <a href="images/Tableau de synthese Ali-Cherif Ilies - Epreuve E4 - BTS SIO 2025 (1).pdf" target="_blank" style="color:#888; font-family:'Montserrat',Arial,sans-serif; font-size:1em; text-decoration:none; display:inline-block; margin-bottom:6px; border:1.5px solid #bbb; border-radius:8px; padding:8px 20px; transition:box-shadow 0.2s, border-color 0.2s; box-shadow:0 1px 4px rgba(0,0,0,0.03); background:#fafafd; cursor:pointer;" onmouseover="this.style.borderColor='#8e1efc';this.style.boxShadow='0 2px 12px rgba(142,30,252,0.10)';" onmouseout="this.style.borderColor='#bbb';this.style.boxShadow='0 1px 4px rgba(0,0,0,0.03)';">Tableau de synthèse Ali-Cherif Ilies - Epreuve E4 - BTS SIO 2025 (PDF)</a>
+</div>
+
+<div class="container-fluid" style="text-align:center; margin-top:20px;">
+  <p>&copy; 2024 Portfolio ALI-CHERIF Ilies</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> 
+<script src="js/wow.min.js"></script>
+<script>
+wow = new WOW();
+wow.init();
+</script>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var titre = document.querySelector('.banner-text h2');
+  if (titre) {
+    titre.classList.remove('animate__fadeInDown');
+    void titre.offsetWidth;
+    titre.classList.add('animate__fadeInDown');
+  }
+  var links = document.querySelectorAll('.navbar-nav .nav-link');
+  links.forEach(function(link) {
+    link.addEventListener('mousedown', createRipple);
+  });
+});
+function createRipple(e) {
+  // Effet ripple sur les onglets
+}
+</script>
+
+      <div class="col-md-12">
+        <p>&copy; 2024 Portfolio ALI-CHERIF Ilies</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
